@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title=title
+        link(rel='icon', href='/assets/images/fav.jpg')
+        link(href='/assets/stylesheets/main.css', rel='stylesheet')
+
+    body
+        .container
+            header
+                a#logo(href='/') Risent Veber
+            nav
+                ul
+                    each page in [{title:"О себе", url: "/"}, {title:"Разработка", url: "/dev/"}, {title:"Книги", url: "/books/"}, {title:"Стихи", url: "/verse/"}]
+                        - var classname = (active == page.url)?'active':''
+                        li.menu(class=classname)
+                            a(href=page.url)=page.title
+            section(style='min-height: 300px;')!=contents
+                #disqus_thread
+
+            noscript Please enable JavaScript to view the
+                a(href='https://disqus.com/?ref_noscript') comments powered by Disqus.
+            footer.clearfix Risent Veber &copy; 2014-2017
+
+    script(src='/assets/js/turbolinks.min.js')
+    script(src='/assets/js/main.min.js')
+    //<script id="dsq-count-scr" src="//risentveber-ru.disqus.com/count.js" async></script>
