@@ -1,56 +1,64 @@
-const Metalsmith  = require('metalsmith');
-const timer       = require('./plugins/timer');
-const jade        = require('metalsmith-jade');
-const layouts     = require('metalsmith-layouts');
-const permalinks  = require('metalsmith-permalinks');
-const collections = require('metalsmith-collections');
-const uglify      = require('metalsmith-uglify');
-const less        = require('metalsmith-less');
-const ignore      = require('metalsmith-ignore');
-const cleanCss    = require('metalsmith-clean-css');
-var path = require('metalsmith-path');
+const Metalsmith     = require('metalsmith');
+const timer          = require('./plugins/timer');
+const printFilesTree = require('./plugins/printFilesTree');
+const jade           = require('metalsmith-jade');
+const layouts        = require('metalsmith-layouts');
+const permalinks     = require('metalsmith-permalinks');
+const collections    = require('metalsmith-collections');
+const uglify         = require('metalsmith-uglify');
+const less           = require('metalsmith-less');
+const ignore         = require('metalsmith-ignore');
+const cleanCss       = require('metalsmith-clean-css');
+const code           = require('metalsmith-code-highlight');
 
 Metalsmith(__dirname)
-    .metadata({
-        title: "My Static Site & Blog",
-        description: "It's about saying »Hello« to the World.",
-        generator: "Metalsmith",
-        url: "http://www.metalsmith.io/"
-    })
     .source('./source')
+    .metadata({
+        title: 'Risent Veber',
+        generator: 'Metalsmith',
+        url: 'https://risentveber.ru/',
+
+    })
     .destination('./build')
     .clean(true)
-    .use(collections({                  // determine page collection/taxonomy
-        devs: {
-            pattern: "*.jade"
-        }
-    }))
-    .use(jade())
-    .use(permalinks())
 
+    .use(collections({
+        articles: {
+            pattern: [
+                'dev/**',
+                '!dev/index.jade'
+            ]
+            // sortBy: 'date',
+            // reverse: true
+        },
+    }))
+
+    .use(jade({
+        useMetadata: true
+    }))
+    .use(permalinks({
+        relative: false
+    }))
+    //.use(include())
     .use(layouts({
-        engine: 'jade'
+        engine: 'jade',
+        default: 'index.jade',
+        pattern: '**/*.html'
+    }))
+    .use(code({
+        useBR: true
     }))
     .use(less())
     .use(cleanCss())
     .use(uglify())
     .use(ignore([
-        '**/*.less',
-        '**/*.js',
-        '**/*.css',
-        '**/assets/**',
-        '!/assets/js/main.min.js',
-        '!/assets/js/turbolinks.min.js',
-        '!/assets/stylesheets/main.css',
-        '!assets/**',
+        '**/*.less'
     ]))
-    //.use(path({ directoryIndex : "index.html" }))
     .build((err, files) => {
         if (err) { throw err; }
+
         process.stdout.write('\x1b[1m');
-        Object.keys(files).sort().forEach(f => {
-            process.stdout.write('\t' + f + '\n');
-        });
+        printFilesTree(files);
         process.stdout.write('\x1b[0m');
-        timer('end')();
+        timer('Build time: ')();
     });

@@ -5,4 +5,7 @@ active: '/dev/'
 ---
 
 h4 Разработка
-p= JSON.stringify(Object.keys(this))
+ul
+    each a in articles
+        li
+            a(href=('/'+a.path.slice(0, -5)+'/'))= a.title
