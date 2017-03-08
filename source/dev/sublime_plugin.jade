@@ -1,0 +1,27 @@
+---
+title: Rails плагин для Sublime
+date: 2013/10/13
+---
+
+H2 Sublime плагин для быстрого поиска файлов в Rails.
+
+p Код плагина:
+
+pre
+    code.hljs.lang-python
+        |import sublime, sublime_plugin
+        br
+        |class FindRailsFileCommand(sublime_plugin.TextCommand):
+        |    def run(self, edit):
+        |    v = self.view
+        |    cursor = self.view.sel()[0]
+        |    current_word = v.substr(v.word(cursor))
+        |        v.window().run_command("show_overlay", {
+        |        "overlay": "goto",
+        |        "show_files": True,
+        |        "text": current_word
+        |        })
+
+p Установка комбинации клавиш для вызова:
+
+code.hljs.lang-json { "keys": ["ctrl+shift+z"], "command": "find_rails_file" }

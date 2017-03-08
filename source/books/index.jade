@@ -5,3 +5,7 @@ active: '/books/'
 ---
 
 h4 Книги
+ul
+    each p in books_posts
+        li
+            a(href=('/'+p.path.slice(0, -5)+'/'))= p.title

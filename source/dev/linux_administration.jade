@@ -3,4 +3,35 @@ title: Администрирование linux
 date: 2015/08/13
 ---
 
-script(src='https://gist.github.com/risentveber/fb2a677bde5a6162aa6b8c06e907fd43.js')
+h3 Администрирование Linux
+
+h4 Полезные алиасы и функции для bash
+p
+    | После нескольких лет использования классического bash приходишь к выводу, что необходимо
+    | нечто более функциональное и информативное особенно в плане визуализации информации связанной с текущим
+    | репозиторием. Среди подобных инструментов самые популярные&nbsp;
+    a(href='http://ohmyz.sh/', target='_blank') O my Zsh
+    |&nbsp;и&nbsp;
+    a(href='https://fishshell.com/', target='_blank') Fish
+    |. Пробовал пользоваться обоими и пришел к заключению, что zsh удобнее.
+br
+p Функция для быстрой фильтрации stderr:
+pre
+    code.hljs.lang-bash
+        |ger() {
+        |    eval "${@:1: -1} 2>&1 >/dev/null | grep '${@: -1}' -A 15"
+        |}
+br
+p Свободная память в системе:
+pre
+    code.hljs.lang-bash
+        df -h | awk '$NF=="/"{printf "Disk Usage: %d/%dGB (%s)\n", $3,$2,$5}'
+
+h4 Полезные ссылки
+ul
+    li
+        a(href='https://help.ubuntu.com/community/SwapFaq', target='_blank') Создание swap-файла
+    li
+        a(href='https://gist.github.com/mockra/9062657', target='_blank') Nginx static site
+    li
+        a(href='https://gist.github.com/risentveber/e71aa964b030380ea19eddca2b58cecd', target='_blank') Nginx redirect

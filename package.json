@@ -21,6 +21,7 @@
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-in-place": "^2.0.1",
     "metalsmith-include": "0.0.2",
+    "metalsmith-inspect-files": "^1.0.1",
     "metalsmith-jade": "^2.0.2",
     "metalsmith-layouts": "^1.8.0",
     "metalsmith-less": "^2.0.0",

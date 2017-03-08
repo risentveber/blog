@@ -6,6 +6,6 @@ active: '/dev/'
 
 h4 Разработка
 ul
-    each a in articles
+    each p in dev_posts
         li
-            a(href=('/'+a.path.slice(0, -5)+'/'))= a.title
+            a(href=('/'+p.path.slice(0, -5)+'/'))= p.title

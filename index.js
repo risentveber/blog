@@ -1,6 +1,5 @@
 const Metalsmith     = require('metalsmith');
 const timer          = require('./plugins/timer');
-const printFilesTree = require('./plugins/printFilesTree');
 const jade           = require('metalsmith-jade');
 const layouts        = require('metalsmith-layouts');
 const permalinks     = require('metalsmith-permalinks');
@@ -10,6 +9,7 @@ const less           = require('metalsmith-less');
 const ignore         = require('metalsmith-ignore');
 const cleanCss       = require('metalsmith-clean-css');
 const code           = require('metalsmith-code-highlight');
+const metalsmithInspectFiles = require('metalsmith-inspect-files');
 
 Metalsmith(__dirname)
     .source('./source')
@@ -23,12 +23,20 @@ Metalsmith(__dirname)
     .clean(true)
 
     .use(collections({
-        articles: {
+        dev_posts: {
             pattern: [
                 'dev/**',
                 '!dev/index.jade'
-            ]
-            // sortBy: 'date',
+            ],
+            sortBy: 'title'
+            // reverse: true
+        },
+        books_posts: {
+            pattern: [
+                'books/**',
+                '!books/index.jade'
+            ],
+            sortBy: 'title'
             // reverse: true
         },
     }))
@@ -54,11 +62,9 @@ Metalsmith(__dirname)
     .use(ignore([
         '**/*.less'
     ]))
+    .use(metalsmithInspectFiles())
     .build((err, files) => {
         if (err) { throw err; }
 
-        process.stdout.write('\x1b[1m');
-        printFilesTree(files);
-        process.stdout.write('\x1b[0m');
         timer('Build time: ')();
     });
