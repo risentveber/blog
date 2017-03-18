@@ -2,61 +2,88 @@
 
 @font-face {
     font-family: 'Pacifico';
-    src: local('Pacifico'), url('/assets/fonts/pacifico/400.woff2') format('woff2'), url('/assets/fonts/pacifico/400.woff') format('woff');
+    src: local('Pacifico'),
+    url('/assets/fonts/pacifico/400.woff2') format('woff2'),
+    url('/assets/fonts/pacifico/400.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Forum';
-    src: local('Forum'), url('/assets/fonts/forum/400.woff2') format('woff2'), url('/assets/fonts/forum/400.woff') format('woff');
+    src: local('Forum'),
+    url('/assets/fonts/forum/400.woff2') format('woff2'),
+    url('/assets/fonts/forum/400.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Bender';
-    src: local('Bender Light'), local('Bender-Light'), url('/assets/fonts/bender/300.woff2') format('woff2'), url('/assets/fonts/bender/300.woff') format('woff');
+    src: local('Bender Light'),
+    local('Bender-Light'),
+    url('/assets/fonts/bender/300.woff2') format('woff2'),
+    url('/assets/fonts/bender/300.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Bender';
-    src: local('Bender Light Italic'), local('Bender-LightItalic'), url('/assets/fonts/bender/300i.woff2') format('woff2'), url('/assets/fonts/bender/300i.woff') format('woff');
+    src: local('Bender Light Italic'),
+    local('Bender-LightItalic'),
+    url('/assets/fonts/bender/300i.woff2') format('woff2'),
+    url('/assets/fonts/bender/300i.woff') format('woff');
     font-weight: 300;
     font-style: italic;
 }
 @font-face {
     font-family: 'Bender';
-    src: local('Bender'), url('/assets/fonts/bender/400.woff2') format('woff2'), url('/assets/fonts/bender/400.woff') format('woff');
+    src: local('Bender'),
+    url('/assets/fonts/bender/400.woff2') format('woff2'),
+    url('/assets/fonts/bender/400.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Bender';
-    src: local('Bender Italic'), local('Bender-Italic'), url('/assets/fonts/bender/400i.woff2') format('woff2'), url('/assets/fonts/bender/400i.woff') format('woff');
+    src: local('Bender Italic'),
+    local('Bender-Italic'),
+    url('/assets/fonts/bender/400i.woff2') format('woff2'),
+    url('/assets/fonts/bender/400i.woff') format('woff');
     font-weight: 400;
     font-style: italic;
 }
 @font-face {
     font-family: 'Bender';
-    src: local('Bender Bold'), local('Bender-Bold'), url('/assets/fonts/bender/700.woff2') format('woff2'), url('/assets/fonts/bender/700.woff') format('woff');
+    src: local('Bender Bold'),
+    local('Bender-Bold'),
+    url('/assets/fonts/bender/700.woff2') format('woff2'),
+    url('/assets/fonts/bender/700.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Bender';
-    src: local('Bender Bold Italic'), local('Bender-BoldItalic'), url('/assets/fonts/bender/700i.woff2') format('woff2'), url('/assets/fonts/bender/700i.woff') format('woff');
+    src: local('Bender Bold Italic'),
+    local('Bender-BoldItalic'),
+    url('/assets/fonts/bender/700i.woff2') format('woff2'),
+    url('/assets/fonts/bender/700i.woff') format('woff');
     font-weight: 700;
     font-style: italic;
 }
 @font-face {
     font-family: 'Bender';
-    src: local('Bender Black'), local('Bender-Black'), url('/assets/fonts/bender/900.woff2') format('woff2'), url('/assets/fonts/bender/900.woff') format('woff');
+    src: local('Bender Black'),
+    local('Bender-Black'),
+    url('/assets/fonts/bender/900.woff2') format('woff2'),
+    url('/assets/fonts/bender/900.woff') format('woff');
     font-weight: 900;
     font-style: normal;
 }
 @font-face {
     font-family: 'Bender';
-    src: local('Bender Black Italic'), local('Bender-BlackItalic'), url('/assets/fonts/bender/900i.woff2') format('woff2'), url('/assets/fonts/bender/900i.woff') format('woff');
+    src: local('Bender Black Italic'),
+    local('Bender-BlackItalic'),
+    url('/assets/fonts/bender/900i.woff2') format('woff2'),
+    url('/assets/fonts/bender/900i.woff') format('woff');
     font-weight: 900;
     font-style: italic;
 }
@@ -99,33 +126,18 @@ table {
 html { overflow-y: scroll; }
 /* end reset browser styles */
 @soft_green: rgba(233, 243, 217, 1);
-.admin-bar {
-    position: fixed;
-    padding: 0 30px;
-    padding-right: 100px;
-    width: 100%;
-    border-right: 1px solid black;
-    background: rgba(0,0,0, 0.5);
-    color: white;
-a {
-    float: right;
-    color: white;
-    margin-right: 60px;
-}
-a:visited {
-    color: white;
-}
-}
+
 blockquote {
     overflow: auto;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
     font-size: 1.1rem;
     background: #8CC3BE;
     font-family: 'Forum';
-    background-image: url("/images/absurdity.png");
+    background-image: url('/images/absurdity.png');
 }
 
 .container{
@@ -140,32 +152,18 @@ body{
     /*border-radius: 10px;*/
 }
 
-.clearfix{
+.clearfix {
     clear: both;
 }
-.left{
+
+.left {
     float: right;
 }
-.form-center {
-    width: 200px;
-    margin: 0 auto;
-input {
-    box-sizing: border-box;
-    width: 100%;
-    border: none;
-    margin: 0;
-    border: 1px solid #A1C22D;;
-    padding: 3px;
-}
-input[type=submit]{
-    background: @soft_green;
-}
-}
-header{
+
+header {
     background-repeat: no-repeat;
     height: 120px;
-    font-size: 20px;
-    padding: 1em;
+    padding: 20px;
     background-image: url("/assets/images/full.png");
     background-size: contain;
     background-position: center;
@@ -174,30 +172,13 @@ header{
     border-top-right-radius: 10px;
 }
 
-header>a{
-    font-family: 'pacifico';
-    font-size: 2.5rem;
-    text-shadow: 0 1px 0 #ccc,
-    0 2px 0 #c9c9c9,
-    0 3px 0 #bbb,
-    0 4px 0 #b9b9b9,
-    0 5px 0 #aaa,
-    0 6px 1px rgba(0,0,0,.1),
-    0 0 5px rgba(0,0,0,.1),
-    0 1px 3px rgba(0,0,0,.3),
-    0 3px 5px rgba(0,0,0,.2),
-    0 5px 10px rgba(0,0,0,.25),
-    0 10px 10px rgba(0,0,0,.2),
-    0 20px 20px rgba(0,0,0,.15);
-}
-
 small {
     font-size: 0.6em;
 }
 
-nav{
-    margin: 0px;
-    padding: 0px;
+nav {
+    margin: 0;
+    padding: 0;
     border-top: 1px solid #A1C22D;
     border-bottom: 1px solid #A1C22D;
     font-family: 'Bender';
@@ -208,22 +189,28 @@ nav{
 
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem;
     font-weight: bold;
     font-family: 'Bender';
     margin-bottom: 10px;
     margin-top: 15px;
 }
-h1, h2, h3{
+
+h1, h2, h3 {
     font-size: 1.5rem;
 }
 
 nav ul{
     list-style: none;
-    margin: 0px;
-    padding: 0px;
-    padding-left: 130px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+@media screen and (min-width: 700px) {
+    nav ul {
+        width: 50%;
+    }
 }
 
 a#logo{
@@ -235,27 +222,71 @@ a#logo{
 nav a.menu{
     color: #666;
 }
-
 nav ul li{
     margin:0 1px;
-    padding: 5px 10px;
-    display: inline-block;
-}
-blockquote{
-    font-family: 'Bender';
-}
-blockquote cite
-{
-    font-style: italic;
+    width: 100%;
+    display: block;
 }
 
-nav ul li.active{
+nav ul li.active {
+    box-sizing: border-box;
     margin: 0;
-    border-left: 1px solid #A1C22D;
-    border-right: 1px solid #A1C22D;
+    border: 1px solid #A1C22D;
     background-color: rgba(233, 243, 217, 1);
     padding: 5px 10px;
     display: inline-block;
+}
+
+nav ul li:first-child.active {
+    border-top: none;
+}
+
+nav ul li:last-child.active {
+    border-bottom: none;
+}
+
+@media screen and (min-width: 400px) {
+    nav ul li{
+        width: auto;
+        margin: 0 1px;
+        padding: 5px 10px;
+        display: inline-block;
+    }
+
+    nav ul li.active {
+        margin: 0;
+        border-top: none;
+        border-bottom: none;
+        border-left: 1px solid #A1C22D;
+        border-right: 1px solid #A1C22D;
+        background-color: rgba(233, 243, 217, 1);
+        padding: 5px 10px;
+        display: inline-block;
+    }
+}
+
+blockquote {
+    font-family: 'Bender';
+}
+
+blockquote cite {
+    font-style: italic;
+}
+
+@media screen and (min-width: 700px) {
+    #disqus_thread {
+        position: relative;
+    }
+
+    #disqus_thread:after {
+        content: "";
+        display: block;
+        height: 55px;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        background: white;
+    }
 }
 
 ul {
@@ -272,24 +303,36 @@ aside {
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
+
 img.main {
     border: 1px solid black;
-    width: 400px;
-    float: right;
-    margin-right: 20px;
-    margin-top: 15px;
+    margin: 0;
+    width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+    img.main {
+        border: 1px solid black;
+        width: 400px;
+        float: right;
+        margin-left: 10px;
+        //margin-right: 20px;
+        margin-top: 15px;
+    }
 }
 
 section {
     overflow: auto;
 
-    padding: 1em 4em;
+    padding: 1em;
     background: #FFF;
 
 }
-.right_section{
-    margin: 10px 0px 10px 26%;
-    border:1px solid green;
+
+@media screen and (min-width: 600px) {
+    section {
+        padding: 1em 4em;
+    }
 }
 
 footer{
@@ -304,26 +347,23 @@ footer{
     text-shadow: 0px 1px 0px #fff;
 }
 footer {
-a {
-img {
-    height: 20px;
-    width: 20px;
-}
-    float: left;
-    display: block;
-    margin-right: 10px;
-}
+    a {
+        float: left;
+        display: block;
+        margin-right: 10px;
+    }
 }
 
-a{
+a {
     color: #669900;
     text-decoration: none;
 }
-a:visited{
+
+a:visited {
     color: #145214;
 }
 
-*::selection{
+*::selection {
     background: grey;
     color: white;
 }
