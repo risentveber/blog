@@ -164,7 +164,7 @@ header {
     background-repeat: no-repeat;
     height: 120px;
     padding: 20px;
-    background-image: url("/assets/images/full.png");
+    background-image: url("/assets/images/full.svg");
     background-size: contain;
     background-position: center;
     background-color: rgba(233, 243, 217, 1);/*#E9F3D9;*/
@@ -215,7 +215,7 @@ nav ul{
 
 a#logo{
     display: none;
-    background-image: url("/assets/images/full.png");
+    background-image: url("/assets/images/full.svg");
     color:black;
 }
 
@@ -243,6 +243,16 @@ nav ul li:first-child.active {
 
 nav ul li:last-child.active {
     border-bottom: none;
+}
+
+pre {
+    font-size: 80%;
+}
+
+@media screen and (min-width: 400px) {
+    pre {
+        font-size: 100%;
+    }
 }
 
 @media screen and (min-width: 400px) {
@@ -273,21 +283,21 @@ blockquote cite {
     font-style: italic;
 }
 
-@media screen and (min-width: 700px) {
-    #disqus_thread {
-        position: relative;
-    }
-
-    #disqus_thread:after {
-        content: "";
-        display: block;
-        height: 55px;
-        width: 100%;
-        position: absolute;
-        bottom: 0px;
-        background: white;
-    }
-}
+//@media screen and (min-width: 700px) {
+//    #disqus_thread {
+//        position: relative;
+//    }
+//
+//    #disqus_thread:after {
+//        content: "";
+//        display: block;
+//        height: 55px;
+//        width: 100%;
+//        position: absolute;
+//        bottom: 0px;
+//        background: white;
+//    }
+//}
 
 ul {
     list-style-type: square;
@@ -410,33 +420,33 @@ Style with support for rainbow parens
 .hljs-number,
 .hljs-selector-attr,
 .hljs-selector-pseudo {
-  color: #f99157;
+    color: #f99157;
 }
 
 .hljs-string,
 .hljs-doctag,
 .hljs-regexp {
-  color: #8abeb7;
+    color: #8abeb7;
 }
 
 .hljs-title,
 .hljs-name,
 .hljs-section,
 .hljs-built_in {
-  color: #b5bd68;
+    color: #b5bd68;
 }
 
 .hljs-variable,
 .hljs-template-variable,
 .hljs-selector-id,
 .hljs-class .hljs-title {
-  color: #ffcc66;
+    color: #ffcc66;
 }
 
 .hljs-section,
 .hljs-name,
 .hljs-strong {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .hljs-symbol,
@@ -444,22 +454,22 @@ Style with support for rainbow parens
 .hljs-subst,
 .hljs-meta,
 .hljs-link {
-  color: #f99157;
+    color: #f99157;
 }
 
 .hljs-deletion {
-  color: #dc322f;
+    color: #dc322f;
 }
 
 .hljs-formula {
-  background: #eee8d5;
+    background: #eee8d5;
 }
 
 .hljs-attr,
 .hljs-attribute {
-  color: #81a2be;
+    color: #81a2be;
 }
 
 .hljs-emphasis {
-  font-style: italic;
+    font-style: italic;
 }
