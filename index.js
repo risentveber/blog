@@ -17,7 +17,12 @@ Metalsmith(__dirname)
         title: 'Risent Veber',
         generator: 'Metalsmith',
         url: 'https://risentveber.ru/',
-
+        menuLinks: [
+            {title:'О себе', url: '/'},
+            {title:'Разработка', url: '/dev/'},
+            {title:'Деятельность', url: '/activities/'},
+            {title:'Стихи', url: '/verse/'}
+        ]
     })
     .destination('./build')
     .clean(true)
