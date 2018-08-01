@@ -73,3 +73,4 @@ Metalsmith(__dirname)
 
         timer('Build time: ')();
     });
+
